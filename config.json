@@ -1,1 +1,5 @@
+{
+  "command": "take_screenshot",
+  "requirements": ["Pillow"]
+}
 
