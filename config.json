@@ -1,1 +1,3 @@
 
+
+{ "command": "take_screenshot", "requirements": ["pyautogui"] }
