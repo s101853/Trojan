@@ -1,9 +1,9 @@
-import pyautogui
+from PIL import ImageGrab
 
 def take_screenshot():
     try:
         # Capture the screenshot
-        screenshot = pyautogui.screenshot()
+        screenshot = ImageGrab.grab()
 
         # Save the screenshot
         screenshot.save("screenshot.png")
@@ -12,5 +12,4 @@ def take_screenshot():
     except Exception as e:
         print(f"Failed to capture screenshot: {str(e)}")
 
-# You may need to install pyautogui first:
-# pip install pyautogui
+take_screenshot()
