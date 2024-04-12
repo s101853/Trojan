@@ -1,1 +1,7 @@
 
+
+{
+    "command": "request_network_info",
+    "requirements": ["psutil"]
+}
+
