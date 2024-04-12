@@ -1,6 +1,6 @@
 import psutil
 
-def request_network_info():
+def network_info():
     try:
         network_info = {
             "bytes_sent": psutil.net_io_counters().bytes_sent,
