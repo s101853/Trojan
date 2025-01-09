@@ -1,5 +1,1 @@
-{
-    "command": "execute_bash_command",
-    "requirements": [],
-    "bash_command": "trigger_reverse_shell"
-}
+
