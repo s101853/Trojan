@@ -1,3 +1,4 @@
-"command": "execute_bash_command",
-    "requirements": [],
-    "bash_command": "ls"
+{
+    "command": "port_scan",
+    "requirements": []
+}
