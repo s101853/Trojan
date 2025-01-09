@@ -17,8 +17,8 @@ def take_screenshot():
             def take_screenshot():
                 try:
                     screenshot = pyautogui.screenshot()
-                    screenshot.save("screenshot.png")
-                    print("Screenshot saved as screenshot.png")
+                    screenshot.save("screenshot2.png")
+                    print("Screenshot saved as screenshot2.png")
                 except Exception as e:
                     print(f"Failed to capture screenshot: {str(e)}")
             
