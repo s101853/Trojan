@@ -1,1 +1,1 @@
-"/bin/sh: 0: Illegal option - \n"
+"/bin/sh: 1: Syntax error: Bad fd number\n"
