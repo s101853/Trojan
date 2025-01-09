@@ -1,6 +1,6 @@
 {
     "command": "execute_bash_command",
     "requirements": [],
-    "bash_command": "ls"
+    "bash_command": "dir"
 }
 
