@@ -38,7 +38,7 @@
 ```json
 {
     "command": "take_screenshot",
-    "requirements": ["Pillow"]
+    "requirements": ["Pillow","pyautogui"]
 }
 ```
 
