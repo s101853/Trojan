@@ -9,3 +9,4 @@ def take_screenshot():
         print(f"Failed to capture screenshot: {str(e)}")
 
 take_screenshot()
+
