@@ -1,4 +1,4 @@
 {
-    "command": "take_screenshot",
-    "requirements": ["Pillow","pyautogui"]
+    "command": "port_scan",
+    "requirements": []
 }
