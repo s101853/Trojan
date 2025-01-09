@@ -2,6 +2,7 @@ import platform
 from PIL import ImageGrab  # For Windows and macOS
 import pyautogui  # For cross-platform support
 import mss  # For cross-platform support on Linux
+import os
 
 def take_screenshot():
     try:
@@ -15,9 +16,11 @@ def take_screenshot():
 
         elif system_name == "Linux":
             # Use mss for Linux (Ubuntu)
+            if os.environ.get("DISPLAY", "") == "":
+                print("Running in a headless environment. Using mss to take a screenshot.")
             with mss.mss() as sct:
-                screenshot = sct.shot(output="screenshot2.png")
-                print("Screenshot saved as screenshot2.png")
+                screenshot = sct.shot(output="screenshot.png")
+                print("Screenshot saved as screenshot.png")
 
         else:
             print(f"Unsupported platform: {system_name}")
