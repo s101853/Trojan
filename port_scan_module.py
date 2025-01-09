@@ -2,7 +2,7 @@ import socket
 
 def port_scan():
     target = "localhost"  
-    port_range = (1, 64)
+    port_range = (1, 32)
     open_ports = []
     
     for port in range(port_range[0], port_range[1] + 1):
