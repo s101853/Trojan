@@ -1,3 +1,5 @@
+import socket
+
 def port_scan():
     target = "localhost"  
     port_range = (1, 1024)
