@@ -1,6 +1,6 @@
 {
   "command": "ddos_attack",
-  "target_url": "http://localhost:8000",
+  "target_url": "http://192.168.129.105:8000",
   "request_count": 1000
 }
 
