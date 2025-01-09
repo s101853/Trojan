@@ -2,7 +2,6 @@
     "command": "take_screenshot",
     "requirements": [
         "Pillow",
-        "pyautogui",
-        "mss"
+        "pyautogui"
     ]
 }
