@@ -12,3 +12,4 @@ def network_info():
         return network_info
     except Exception as e:
         print(f"Failed to retrieve network information: {str(e)}")
+        
