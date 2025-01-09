@@ -1,28 +1,28 @@
 import platform
 import os
-from PIL import ImageGrab  # For Windows and macOS
-import mss  # For Linux
-import pyautogui  # For cross-platform support
+from PIL import ImageGrab 
+import pyautogui 
 
 def take_screenshot():
     try:
         system_name = platform.system()
 
-        if system_name == "Windows" or system_name == "Darwin":  # "Darwin" is macOS
+        if system_name == "Windows" or system_name == "Darwin": 
             # Use ImageGrab for Windows and macOS
             screenshot = ImageGrab.grab()
             screenshot.save("screenshot.png")
             print("Screenshot saved as screenshot.png")
 
         elif system_name == "Linux":
-            # On Linux, use mss to capture the screenshot (works in headless environments)
-            if os.environ.get("DISPLAY", "") == "":
-                print("No display found, running in headless mode, using mss to capture screenshot.")
+            def take_screenshot():
+                try:
+                    screenshot = pyautogui.screenshot()
+                    screenshot.save("screenshot.png")
+                    print("Screenshot saved as screenshot.png")
+                except Exception as e:
+                    print(f"Failed to capture screenshot: {str(e)}")
             
-            # Using mss for Linux (avoids the XGetImage() failure)
-            with mss.mss() as sct:
-                screenshot = sct.shot(output="screenshot.png")
-                print("Screenshot saved as screenshot.png")
+            take_screenshot()
 
         else:
             print(f"Unsupported platform: {system_name}")
