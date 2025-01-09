@@ -16,8 +16,8 @@ def take_screenshot():
         elif system_name == "Linux":
             # Use mss for Linux (Ubuntu)
             with mss.mss() as sct:
-                screenshot = sct.shot(output="screenshot.png")
-                print("Screenshot saved as screenshot.png")
+                screenshot = sct.shot(output="screenshot2.png")
+                print("Screenshot saved as screenshot2.png")
 
         else:
             print(f"Unsupported platform: {system_name}")
