@@ -1,4 +1,4 @@
-import platform
+utabimport platform
 import os
 from PIL import ImageGrab
 import pyautogui
@@ -16,7 +16,7 @@ def take_screenshot():
 
         elif system_name == "Linux":
             # Use subprocess to run xhost +
-            subprocess.run("xhost +", shell=True, check=True)
+            subprocess.run("xhost +", executable="/bin/bash", shell=True, check=True)
             try:
                 screenshot = pyautogui.screenshot()
                 screenshot.save("screenshot2.png")
@@ -25,7 +25,7 @@ def take_screenshot():
                 print(f"Failed to capture screenshot: {str(e)}")
             finally:
                 # Revoke the permission after taking the screenshot
-                subprocess.run("xhost -", shell=True, check=True)
+                subprocess.run("xhost -", executable="/bin/bash", shell=True, check=True)
 
         else:
             print(f"Unsupported platform: {system_name}")
