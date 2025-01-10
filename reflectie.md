@@ -26,8 +26,6 @@
 - **Uitdagingen:** Het waarborgen van de functionaliteit door middel van grondige tests, het omgaan met uitzonderingen, en het verifiëren van de compatibiliteit met de evoluerende GitHub-data.
 - **Verbeteringen:** Regelmatige updates en het oplossen van bugs die tijdens het testen zijn ontdekt, waren essentieel om het programma operationeel te houden.
 
-### Reflectieverslag
-
 #### Beschrijf je bevindingen
 Tijdens deze opdracht probeerde ik zoveel mogelijk functionaliteit in het script te integreren, zodat het meerdere vormen van input kon afhandelen. Dit omvatte het versturen van DDOS-aanvallen, het maken van screenshots, en het uitvoeren van commando's. Hoewel het script niet volledig is geoptimaliseerd om elke mogelijke invoer te verwerken met uitgebreide foutafhandeling, zijn de kernfunctionaliteiten aanwezig en operationeel.
 
