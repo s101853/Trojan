@@ -1,4 +1,7 @@
 {
-    "command": "network_info",
-    "requirements": ["psutil"]
+    "command": "take_screenshot",
+    "requirements": [
+        "Pillow",
+        "pyautogui"
+    ]
 }
