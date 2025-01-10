@@ -41,7 +41,7 @@ Tijdens deze opdracht probeerde ik zoveel mogelijk functionaliteit in het script
 ### Demo
 
 #### Korte uitleg bij de handelingen in de demovideo
-1. Alle programma's worden opgestart, waarbij ze hun ID en systeeminformatie doorzenden.
+1. Alle programma's worden opgestart, waarbij ze hun ID en systeeminformatie doorzenden (eventuele dependencies van modules zijn ook al geïnstalleerd zodat dit niet tijdens de video gebeurt).
 2. De **Screenshot-module** wordt uitgevoerd en de gemaakte screenshots worden naar GitHub geüpload.
 3. De **DDOS-module** voert een aanval uit op een lokaal draaiende webserver, wat resulteert in een storing en tijdelijke uitval van de website.
 4. Tot slot voeren we een **reverse shell-command** uit via GitHub. Dit commando arriveert op de Linux-machine en activeert de shell op Kali. Op Windows gebeurt er niets, maar de module kan worden uitgebreid om ook op Windows een reverse shell te activeren.
