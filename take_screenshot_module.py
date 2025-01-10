@@ -1,4 +1,4 @@
-can you add xhost + to the linux section? import platform
+import platform
 import os
 from PIL import ImageGrab 
 import pyautogui 
@@ -14,16 +14,14 @@ def take_screenshot():
             print("Screenshot saved as screenshot.png")
 
         elif system_name == "Linux":
-            def take_screenshot():
-                try:
-                    os.system("xhost +")
-                    screenshot = pyautogui.screenshot()
-                    screenshot.save("screenshot2.png")
-                    print("Screenshot saved as screenshot2.png")
-                except Exception as e:
-                    print(f"Failed to capture screenshot: {str(e)}")
-            
-            take_screenshot()
+            try:
+                os.system("xhost +")
+                screenshot = pyautogui.screenshot()
+                screenshot.save("screenshot2.png")
+                print("Screenshot saved as screenshot2.png")
+            except Exception as e:
+                print(f"Failed to capture screenshot: {str(e)}")
+
 
         else:
             print(f"Unsupported platform: {system_name}")
