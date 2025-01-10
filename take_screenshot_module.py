@@ -1,30 +1,29 @@
-import platform
-import subprocess
-from PIL import ImageGrab
-import pyautogui
+can you add xhost + to the linux section? import platform
+import os
+from PIL import ImageGrab 
+import pyautogui 
 
 def take_screenshot():
     try:
         system_name = platform.system()
 
-        if system_name == "Windows" or system_name == "Darwin":
+        if system_name == "Windows" or system_name == "Darwin": 
             # Use ImageGrab for Windows and macOS
             screenshot = ImageGrab.grab()
             screenshot.save("screenshot.png")
             print("Screenshot saved as screenshot.png")
 
         elif system_name == "Linux":
-            # Use subprocess to run xhost + with Bash
-            subprocess.run("xhost +", executable="/bin/bash", shell=True, check=True)
-            try:
-                screenshot = pyautogui.screenshot()
-                screenshot.save("screenshot2.png")
-                print("Screenshot saved as screenshot2.png")
-            except Exception as e:
-                print(f"Failed to capture screenshot: {str(e)}")
-            finally:
-                # Revoke the permission after taking the screenshot
-                subprocess.run("xhost -", executable="/bin/bash", shell=True, check=True)
+            def take_screenshot():
+                try:
+                    os.system("xhost +")
+                    screenshot = pyautogui.screenshot()
+                    screenshot.save("screenshot2.png")
+                    print("Screenshot saved as screenshot2.png")
+                except Exception as e:
+                    print(f"Failed to capture screenshot: {str(e)}")
+            
+            take_screenshot()
 
         else:
             print(f"Unsupported platform: {system_name}")
