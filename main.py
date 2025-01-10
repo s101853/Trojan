@@ -27,7 +27,7 @@ class GitHubConfigManager:
         self.config = {}
         self.last_config_content = None
         self.headers = {
-            "Authorization": "token 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",
+            "Authorization": "token ghp_token_here",
             "Accept": "application/vnd.github.v3.raw"
         }
 
@@ -191,7 +191,7 @@ class GitHubTaskRunner:
 
             endpoint_url = f"https://api.github.com/repos/s101853/Trojan/contents/{filename}"
             headers = {
-                "Authorization": "token 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",
+                "Authorization": "token ghp_token_here",
                 "Content-Type": "application/json",
             }
             current_contents_response = requests.get(endpoint_url, headers=headers)
