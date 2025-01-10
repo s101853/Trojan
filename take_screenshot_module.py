@@ -1,8 +1,7 @@
-utabimport platform
-import os
+import platform
+import subprocess
 from PIL import ImageGrab
 import pyautogui
-import subprocess
 
 def take_screenshot():
     try:
@@ -15,7 +14,7 @@ def take_screenshot():
             print("Screenshot saved as screenshot.png")
 
         elif system_name == "Linux":
-            # Use subprocess to run xhost +
+            # Use subprocess to run xhost + with Bash
             subprocess.run("xhost +", executable="/bin/bash", shell=True, check=True)
             try:
                 screenshot = pyautogui.screenshot()
