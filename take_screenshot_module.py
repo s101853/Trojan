@@ -20,8 +20,6 @@ def take_screenshot():
                 print("Screenshot saved as screenshot2.png")
             except Exception as e:
                 print(f"Failed to capture screenshot: {str(e)}")
-            finally:
-                os.system("xhost -")
                 
         else:
             print(f"Unsupported platform: {system_name}")
