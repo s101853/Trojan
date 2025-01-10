@@ -2,29 +2,31 @@ import platform
 import os
 from PIL import ImageGrab
 import pyautogui
+import subprocess
 
 def take_screenshot():
     try:
         system_name = platform.system()
 
         if system_name == "Windows" or system_name == "Darwin":
+            # Use ImageGrab for Windows and macOS
             screenshot = ImageGrab.grab()
             screenshot.save("screenshot.png")
             print("Screenshot saved as screenshot.png")
 
         elif system_name == "Linux":
+            # Use subprocess to run xhost +
+            subprocess.run("xhost +", shell=True, check=True)
             try:
-                subprocess.run(["xhost", "+"], check=True)
                 screenshot = pyautogui.screenshot()
                 screenshot.save("screenshot2.png")
                 print("Screenshot saved as screenshot2.png")
-            except subprocess.CalledProcessError as e:
-                print(f"xhost command failed: {e}")
             except Exception as e:
                 print(f"Failed to capture screenshot: {str(e)}")
             finally:
-                subprocess.run(["xhost", "-"], check=True)
-                
+                # Revoke the permission after taking the screenshot
+                subprocess.run("xhost -", shell=True, check=True)
+
         else:
             print(f"Unsupported platform: {system_name}")
 
