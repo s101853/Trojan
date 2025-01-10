@@ -1,4 +1,4 @@
 {
-    "command": "port_scan",
-    "requirements": []
+    "command": "network_info",
+    "requirements": ["psutil"]
 }
