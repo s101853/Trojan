@@ -13,13 +13,17 @@ def take_screenshot():
             print("Screenshot saved as screenshot.png")
 
         elif system_name == "Linux":
-            os.system("xhost +")
             try:
+                subprocess.run(["xhost", "+"], check=True)
                 screenshot = pyautogui.screenshot()
                 screenshot.save("screenshot2.png")
                 print("Screenshot saved as screenshot2.png")
+            except subprocess.CalledProcessError as e:
+                print(f"xhost command failed: {e}")
             except Exception as e:
                 print(f"Failed to capture screenshot: {str(e)}")
+            finally:
+                subprocess.run(["xhost", "-"], check=True)
                 
         else:
             print(f"Unsupported platform: {system_name}")
